@@ -1,0 +1,9 @@
+=================================================================
+==32==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55f944c7c02c at pc 0x55f944c7923b bp 0x7ffd30c287e0 sp 0x7ffd30c287d0
+READ of size 4 at 0x55f944c7c02c thread T0
+    #0 0x55f944c7923a in main (/mnt/c/blonded04/Documents/hseteach/hse-spb-cpp-2024-is/exercises/03-240920/04-address-sanitizer+0x123a)
+    #1 0x7ffba670dd8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #2 0x7ffba670de3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #3 0x55f944c792d4 in _start (/mnt/c/blonded04/Documents/hseteach/hse-spb-cpp-2024-is/exercises/03-240920/04-address-sanitizer+0x12d4)
+
+0x55f944c7c02c is located 0 bytes to the right of global variable 'v' defined in '04-address-sanitizer.cpp:4:5' (0x55f944c7c020) of size 12

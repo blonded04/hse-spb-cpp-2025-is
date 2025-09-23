@@ -1,0 +1,8 @@
+04-address-sanitizer(31426,0x7ff85a3a3700) malloc: nano zone abandoned due to inability to reserve vm space.
+=================================================================
+==31426==ERROR: AddressSanitizer: global-buffer-overflow on address 0x0001044e000c at pc 0x0001044db255 bp 0x7ff7bba27870 sp 0x7ff7bba27868
+READ of size 4 at 0x0001044e000c thread T0
+    #0 0x1044db254 in main+0x84 (04-address-sanitizer:x86_64+0x100003254) (BuildId: 080519cd1eb739488b9bc58de777458f32000000200000000100000000000d00)
+    #1 0x7ff81697041e in start+0x76e (dyld:x86_64+0xfffffffffff6e41e) (BuildId: 31e1c182e611388397a34334a21c90bd32000000200000000100000000050d00)
+
+0x0001044e000c is located 0 bytes to the right of global variable 'v' defined in '04-address-sanitizer.cpp:4:5' (0x1044e0000) of size 12
