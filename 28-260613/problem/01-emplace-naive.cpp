@@ -31,9 +31,10 @@ public:
     }
 
     template<typename T1, typename T2, typename T3>
-    void emplace(T1&& v1, T2&& v2, T3&& v3) {
+    void emplace(T1 v1, T2 v2, T3 v3) {
         reset();
-        new (&storage) T(std::forward<T1>(v1), std::forward<T2>(v2), std::forward<T3>(v3));
+        // TODO: use perfect forwarding
+        new (&storage) T(v1, v2, v3);
         created = true;
     }
 };
